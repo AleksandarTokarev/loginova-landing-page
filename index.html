@@ -352,6 +352,26 @@
             width: 100%;
         }
 
+        .footer-app-stores {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-app-stores a {
+            display: inline-block;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-app-stores a:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .footer-app-stores img {
+            height: 40px;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -970,6 +990,15 @@
                 <h4>Contact Us</h4>
                 <a href="mailto:contact@loginova.ai">contact@loginova.ai</a>
                 <a href="tel:+19379106957">+1 937 910 6957</a>
+            </div>
+
+            <div class="footer-app-stores">
+                <a href="https://apps.apple.com/us/app/chatgpt/id6448311069" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=ai.loginova.tms" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                </a>
             </div>
 
             <div class="footer-copyright">
