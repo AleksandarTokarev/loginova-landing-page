@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loginova - Trucking Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .cta-button {
+            background: #2b5992;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1e4070;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2b5992 0%, #1e4070 100%);
+            color: #fff;
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-button {
+            background: #fff;
+            color: #2b5992;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+
+        .hero .cta-button:hover {
+            background: #d6ebf9;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: #f8fafc;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2b5992;
+            margin-bottom: 1rem;
+        }
+
+        .features-subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #d6ebf9;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon svg {
+            width: 30px;
+            height: 30px;
+            stroke: #2b5992;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Feature Detail Sections */
+        .feature-detail {
+            padding: 6rem 2rem;
+            background: #fff;
+        }
+
+        .feature-detail:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .feature-detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .feature-detail-content h2 {
+            font-size: 2.25rem;
+            color: #2b5992;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-detail-content p {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.25rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            transition: background 0.3s ease;
+        }
+
+        .feature-detail:nth-child(even) .feature-list li {
+            background: #fff;
+        }
+
+        .feature-list li:hover {
+            background: #d6ebf9;
+        }
+
+        .feature-list-icon {
+            width: 40px;
+            height: 40px;
+            background: #2b5992;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .feature-list-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .feature-list-text h4 {
+            font-size: 1.1rem;
+            color: #1a1a2e;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-list-text p {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .feature-detail-image {
+            position: relative;
+        }
+
+        .feature-detail-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-detail-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            background: #d6ebf9;
+            border-radius: 16px;
+            z-index: -1;
+        }
+
+        @media (max-width: 968px) {
+            .feature-detail-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .feature-detail-image {
+                order: -1;
+            }
+
+            .feature-detail-image::before {
+                display: none;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact {
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #d6ebf9;
+        }
+
+        .footer-contact a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #d6ebf9;
+        }
+
+        .footer-copyright {
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #2a2a3e;
+            padding-top: 2rem;
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .features h2 {
+                font-size: 2rem;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            .logo {
+                height: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <img src="assets/logo.svg" alt="Loginova" class="logo">
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Streamline Your Trucking Operations</h1>
+            <p>Loginova is a comprehensive Trucking Management System (TMS) designed for carriers. Manage dispatch, accounting, safety, and maintenance all in one powerful SaaS platform.</p>
+            <a href="#contact" class="cta-button">Request a Demo</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-container">
+            <h2>Everything You Need to Run Your Fleet</h2>
+            <p class="features-subtitle">Our all-in-one platform helps carriers optimize operations and grow their business.</p>
+
+            <div class="features-grid">
+                <!-- Dispatch -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4"/>
+                            <path d="M12 15l4 4-4 4"/>
+                            <path d="M8 19h8"/>
+                        </svg>
+                    </div>
+                    <h3>Dispatch</h3>
+                    <p>Efficiently manage your loads, drivers, and routes. Real-time tracking and automated dispatch workflows keep your fleet moving.</p>
+                </div>
+
+                <!-- Accounting -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Accounting</h3>
+                    <p>Streamline invoicing, track expenses, and manage payroll. Get complete financial visibility with powerful reporting tools.</p>
+                </div>
+
+                <!-- Safety -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Safety</h3>
+                    <p>Stay DOT compliant with driver qualification files, HOS tracking, and safety scorecards. Protect your drivers and your business.</p>
+                </div>
+
+                <!-- Maintenance -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3>Maintenance</h3>
+                    <p>Schedule preventive maintenance, track repairs, and manage parts inventory. Reduce downtime and extend the life of your equipment.</p>
+                </div>
+
+                <!-- Integrations -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="4" y="4" width="16" height="16" rx="2"/>
+                            <path d="M9 9h6v6H9z"/>
+                            <path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>
+                        </svg>
+                    </div>
+                    <h3>Integrations</h3>
+                    <p>Connect with ELD providers, fuel cards, factoring companies, QuickBooks, and more. Custom integrations available.</p>
+                </div>
+
+                <!-- Driver Mobile App -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                            <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <h3>Driver Mobile App</h3>
+                    <p>Empower drivers with load info, document uploads, and real-time status updates. Available on iOS and Android.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dispatching Section -->
+    <section class="feature-detail" id="dispatching">
+        <div class="feature-detail-container">
+            <div class="feature-detail-content">
+                <h2>Dispatching</h2>
+                <p>Powerful tools to manage your loads and keep your fleet running efficiently.</p>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Live Tracking</h4>
+                            <p>Real-time GPS tracking of all your trucks and drivers on an interactive map.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Schedule</h4>
+                            <p>Gantt chart view of all loads for easy planning and conflict detection.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="18" y1="20" x2="18" y2="10"/>
+                                <line x1="12" y1="20" x2="12" y2="4"/>
+                                <line x1="6" y1="20" x2="6" y2="14"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Performance</h4>
+                            <p>Revenue, empty miles, and loaded miles statistics at a glance.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Layoffs</h4>
+                            <p>Manage driver time-off requests and availability schedules.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <path d="M9 15l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Load Creator</h4>
+                            <p>AI-powered load creation from Rate Confirmations - supports text and image-based PDFs.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="feature-detail-image">
+                <img src="assets/dispatch-board.png" alt="Loginova Dispatch Board" style="margin-bottom: 1.5rem;">
+                <img src="assets/schedule.png" alt="Loginova Schedule View">
+            </div>
+        </div>
+    </section>
+
+    <!-- Accounting Section -->
+    <section class="feature-detail" id="accounting">
+        <div class="feature-detail-container">
+            <div class="feature-detail-image">
+                <img src="assets/accounting.png" alt="Loginova Accounting Dashboard" style="margin-bottom: 1.5rem;">
+                <img src="assets/statement-example.png" alt="Loginova Statement Example">
+            </div>
+
+            <div class="feature-detail-content">
+                <h2>Accounting</h2>
+                <p>Complete financial management for your trucking business.</p>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Statement Creation</h4>
+                            <p>Generate detailed driver and company statements with one click.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="8" y1="12" x2="16" y2="12"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Deductions</h4>
+                            <p>Manage one-time and recurring deductions for drivers and owner-operators.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="8" x2="12" y2="16"/>
+                                <line x1="8" y1="12" x2="16" y2="12"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Credits / Reimbursements</h4>
+                            <p>Track and apply credits and reimbursements to driver accounts.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                                <line x1="4" y1="22" x2="4" y2="15"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Tolls</h4>
+                            <p>Import and allocate toll expenses automatically to loads and drivers.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 22l1.5-3.5M20 22l-1.5-3.5"/>
+                                <path d="M9.5 6.5L12 2l2.5 4.5"/>
+                                <path d="M12 2v6"/>
+                                <circle cx="12" cy="14" r="6"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Fuel</h4>
+                            <p>Track fuel purchases, IFTA reporting, and fuel card transactions.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <line x1="2" y1="10" x2="22" y2="10"/>
+                                <line x1="6" y1="16" x2="10" y2="16"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Money Codes (E-checks)</h4>
+                            <p>Issue electronic money codes for driver advances and payments.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section class="feature-detail" id="safety">
+        <div class="feature-detail-container">
+            <div class="feature-detail-content">
+                <h2>Safety</h2>
+                <p>Stay compliant and protect your fleet with comprehensive safety management.</p>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="1" y="3" width="15" height="13" rx="2"/>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                                <circle cx="5.5" cy="18.5" r="2.5"/>
+                                <circle cx="18.5" cy="18.5" r="2.5"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Manage Trucks / Trailers / Drivers</h4>
+                            <p>Centralized management of all your equipment and driver information.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Expiration Alerts</h4>
+                            <p>Get alerts for CDL, Medical, Insurance, and other document expirations.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>IFTA Reporting</h4>
+                            <p>Automated IFTA fuel tax reporting with state-by-state mileage tracking.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/>
+                                <line x1="12" y1="8" x2="12" y2="12"/>
+                                <line x1="12" y1="16" x2="12.01" y2="16"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Crashes & Claims Management</h4>
+                            <p>Track accidents, manage insurance claims, and document incidents.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>DOT Management</h4>
+                            <p>Stay DOT compliant with inspection tracking and audit preparation tools.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="feature-detail-image">
+                <img src="assets/safety.png" alt="Loginova Safety Dashboard" style="margin-bottom: 1.5rem;">
+                <img src="assets/safety-2.png" alt="Loginova Safety Details">
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance Section -->
+    <section class="feature-detail" id="maintenance">
+        <div class="feature-detail-container">
+            <div class="feature-detail-image">
+                <img src="assets/maintenance-1.png" alt="Loginova Maintenance Dashboard" style="margin-bottom: 1.5rem;">
+                <img src="assets/maintenance-2.png" alt="Loginova Maintenance Details">
+            </div>
+
+            <div class="feature-detail-content">
+                <h2>Maintenance</h2>
+                <p>Keep your fleet running smoothly with proactive maintenance management.</p>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Manage Truck & Trailer Repairs</h4>
+                            <p>Schedule and track repairs, preventive maintenance, and service history for all equipment.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Track Maintenance Costs</h4>
+                            <p>Monitor expenses for parts, labor, and services across your entire fleet.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="feature-detail" id="integrations">
+        <div class="feature-detail-container">
+            <div class="feature-detail-content">
+                <h2>Integrations</h2>
+                <p>Connect with the tools you already use to streamline your operations.</p>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                <path d="M9 9h6v6H9z"/>
+                                <path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>ELD Providers</h4>
+                            <p>Seamless integration with major ELD providers for automatic HOS data sync.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="1" y="4" width="22" height="16" rx="2"/>
+                                <line x1="1" y1="10" x2="23" y2="10"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Fuel Cards</h4>
+                            <p>Import transactions from major fuel card providers automatically.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                                <line x1="4" y1="22" x2="4" y2="15"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Tolls</h4>
+                            <p>Connect with toll providers to automatically import and allocate toll charges.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Factoring</h4>
+                            <p>Integrate with factoring companies for faster payment processing.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>QuickBooks</h4>
+                            <p>Sync invoices, payments, and expenses directly with QuickBooks.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="8" x2="12" y2="16"/>
+                                <line x1="8" y1="12" x2="16" y2="12"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Custom Integrations</h4>
+                            <p>Need something else? We'll build it for free during your onboarding!</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="feature-detail-image">
+                <img src="assets/integrations.png" alt="Loginova Integrations">
+            </div>
+        </div>
+    </section>
+
+    <!-- Driver Mobile App Section -->
+    <section class="feature-detail" id="mobile-app">
+        <div class="feature-detail-container">
+            <div class="feature-detail-image">
+                <img src="assets/mobile-app.png" alt="Loginova Driver Mobile App">
+            </div>
+
+            <div class="feature-detail-content">
+                <h2>Driver Mobile Application</h2>
+                <p>Empower your drivers with everything they need right on their phone.</p>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Upcoming & Completed Loads</h4>
+                            <p>View all assigned loads with pickup/delivery details and history.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Driver / Permit Book</h4>
+                            <p>All documents available offline on the driver's phone.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Driver Self Profile Editing</h4>
+                            <p>Drivers can update their own contact info and preferences.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>Mark / Complete Load Stops</h4>
+                            <p>Update stop status in real-time - automatically syncs with TMS.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                <circle cx="12" cy="13" r="4"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>POD / BOL / Document Upload</h4>
+                            <p>Scan and upload documents using the phone camera or built-in scanner.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-list-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <div class="feature-list-text">
+                            <h4>iOS & Android</h4>
+                            <p>Available on both iOS and Android platforms.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <img src="assets/logo.svg" alt="Loginova" class="footer-logo">
+
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <a href="mailto:contact@loginova.ai">contact@loginova.ai</a>
+                <a href="tel:+19379106957">+1 937 910 6957</a>
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; 2024 Loginova. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
