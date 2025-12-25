@@ -545,6 +545,12 @@
             transform: scaleX(1);
         }
 
+        .feature-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
         .feature-icon {
             width: 56px;
             height: 56px;
@@ -592,6 +598,7 @@
             background: var(--bg-primary);
             position: relative;
             transition: background-color 0.3s ease;
+            scroll-margin-top: 80px;
         }
 
         .feature-detail:nth-child(even) {
@@ -993,87 +1000,101 @@
 
             <div class="features-grid">
                 <!-- Dispatch -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4"/>
-                            <path d="M12 15l4 4-4 4"/>
-                            <path d="M8 19h8"/>
-                        </svg>
+                <a href="#dispatching" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4"/>
+                                <path d="M12 15l4 4-4 4"/>
+                                <path d="M8 19h8"/>
+                            </svg>
+                        </div>
+                        <h3>Dispatch</h3>
+                        <p>Efficiently manage your loads, drivers, and routes. Real-time tracking and automated dispatch workflows keep your fleet moving.</p>
                     </div>
-                    <h3>Dispatch</h3>
-                    <p>Efficiently manage your loads, drivers, and routes. Real-time tracking and automated dispatch workflows keep your fleet moving.</p>
-                </div>
+                </a>
 
                 <!-- Accounting -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                        </svg>
+                <a href="#accounting" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <h3>Accounting</h3>
+                        <p>Streamline invoicing, track expenses, and manage payroll. Get complete financial visibility with powerful reporting tools.</p>
                     </div>
-                    <h3>Accounting</h3>
-                    <p>Streamline invoicing, track expenses, and manage payroll. Get complete financial visibility with powerful reporting tools.</p>
-                </div>
+                </a>
 
                 <!-- Safety -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            <path d="M9 12l2 2 4-4"/>
-                        </svg>
+                <a href="#safety" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Safety</h3>
+                        <p>Stay DOT compliant with driver qualification files, HOS tracking, and safety scorecards. Protect your drivers and your business.</p>
                     </div>
-                    <h3>Safety</h3>
-                    <p>Stay DOT compliant with driver qualification files, HOS tracking, and safety scorecards. Protect your drivers and your business.</p>
-                </div>
+                </a>
 
                 <!-- Maintenance -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
+                <a href="#maintenance" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h3>Maintenance</h3>
+                        <p>Schedule preventive maintenance, track repairs, and manage parts inventory. Reduce downtime and extend the life of your equipment.</p>
                     </div>
-                    <h3>Maintenance</h3>
-                    <p>Schedule preventive maintenance, track repairs, and manage parts inventory. Reduce downtime and extend the life of your equipment.</p>
-                </div>
+                </a>
 
                 <!-- Integrations -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="4" y="4" width="16" height="16" rx="2"/>
-                            <path d="M9 9h6v6H9z"/>
-                            <path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>
-                        </svg>
+                <a href="#integrations" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                <path d="M9 9h6v6H9z"/>
+                                <path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>
+                            </svg>
+                        </div>
+                        <h3>Integrations</h3>
+                        <p>Connect with ELD providers, fuel cards, factoring companies, QuickBooks, and more. Custom integrations available.</p>
                     </div>
-                    <h3>Integrations</h3>
-                    <p>Connect with ELD providers, fuel cards, factoring companies, QuickBooks, and more. Custom integrations available.</p>
-                </div>
+                </a>
 
                 <!-- Driver Mobile App -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                            <line x1="12" y1="18" x2="12.01" y2="18"/>
-                        </svg>
+                <a href="#mobile-app" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <h3>Driver Mobile App</h3>
+                        <p>Empower drivers with load info, document uploads, and real-time status updates. Available on iOS and Android.</p>
                     </div>
-                    <h3>Driver Mobile App</h3>
-                    <p>Empower drivers with load info, document uploads, and real-time status updates. Available on iOS and Android.</p>
-                </div>
+                </a>
 
                 <!-- AI Agents -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5A2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5a2.5 2.5 0 0 0 2.5 2.5a2.5 2.5 0 0 0 2.5-2.5a2.5 2.5 0 0 0-2.5-2.5z"/>
-                        </svg>
+                <a href="#ai-agents" class="feature-card-link">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5A2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5a2.5 2.5 0 0 0 2.5 2.5a2.5 2.5 0 0 0 2.5-2.5a2.5 2.5 0 0 0-2.5-2.5z"/>
+                            </svg>
+                        </div>
+                        <h3>AI Agents</h3>
+                        <p>24/7 AI-powered recruiting, driver orientation, and frontdesk agents. Scale your team without adding headcount.</p>
                     </div>
-                    <h3>AI Agents</h3>
-                    <p>24/7 AI-powered recruiting, driver orientation, and frontdesk agents. Scale your team without adding headcount.</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
