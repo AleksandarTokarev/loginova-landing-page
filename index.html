@@ -10,8 +10,8 @@
     <script>
         // Immediately apply theme to prevent flash
         (function() {
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var savedTheme = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
                 document.documentElement.setAttribute('data-theme', 'dark');
             }
@@ -227,6 +227,21 @@
 
         [data-theme="dark"] .theme-toggle .moon-icon {
             display: none;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.625rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--bg-secondary);
         }
 
         .cta-button {
@@ -826,6 +841,8 @@
         <div class="header-container">
             <a href="#" class="logo-link"><img src="assets/logo.svg" alt="Loginova" class="logo"></a>
             <div class="header-actions">
+                <a href="tutorials.html" class="nav-link">Tutorials</a>
+                <a href="testimonials.html" class="nav-link">Testimonials</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <svg class="moon-icon" viewBox="0 0 24 24">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
@@ -1462,19 +1479,17 @@
     <script>
         // Theme Toggle Functionality
         (function() {
-            const themeToggle = document.getElementById('themeToggle');
-            const html = document.documentElement;
+            var themeToggle = document.getElementById('themeToggle');
+            var html = document.documentElement;
 
-            // Check for saved theme preference or default to system preference
             function getThemePreference() {
-                const savedTheme = localStorage.getItem('theme');
+                var savedTheme = localStorage.getItem('theme');
                 if (savedTheme) {
                     return savedTheme;
                 }
                 return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
 
-            // Apply theme
             function applyTheme(theme) {
                 if (theme === 'dark') {
                     html.setAttribute('data-theme', 'dark');
@@ -1488,11 +1503,10 @@
 
             // Toggle theme on button click
             themeToggle.addEventListener('click', function() {
-                const currentTheme = html.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-                applyTheme(newTheme);
+                var currentTheme = html.getAttribute('data-theme');
+                var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 localStorage.setItem('theme', newTheme);
+                applyTheme(newTheme);
             });
 
             // Listen for system theme changes
