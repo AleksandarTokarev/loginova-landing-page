@@ -244,6 +244,80 @@
             background: var(--bg-secondary);
         }
 
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.625rem;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--border-color);
+        }
+
+        .mobile-menu-btn svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--text-primary);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .mobile-menu-btn .menu-icon { display: block; }
+        .mobile-menu-btn .close-icon { display: none; }
+        .mobile-menu-btn.active .menu-icon { display: none; }
+        .mobile-menu-btn.active .close-icon { display: block; }
+
+        /* Mobile Navigation Overlay */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary);
+            z-index: 999;
+            padding: 6rem 2rem 2rem;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-nav .nav-link {
+            font-size: 1.25rem;
+            padding: 1rem 2rem;
+            width: 100%;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        .mobile-nav .cta-button {
+            margin-top: 1rem;
+            width: 100%;
+            text-align: center;
+            padding: 1.125rem 2rem;
+            font-size: 1.1rem;
+        }
+
         .cta-button {
             background: var(--navy-900);
             color: var(--white);
@@ -793,6 +867,15 @@
                 height: 32px;
             }
 
+            .header-actions .nav-link,
+            .header-actions .cta-button {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
             .cta-button {
                 padding: 0.75rem 1.25rem;
                 font-size: 0.875rem;
@@ -860,9 +943,28 @@
                     </svg>
                 </button>
                 <a href="#contact" class="cta-button">Get Started</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <svg class="menu-icon" viewBox="0 0 24 24">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                    <svg class="close-icon" viewBox="0 0 24 24">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tutorials.html" class="nav-link">Tutorials</a>
+        <a href="testimonials.html" class="nav-link">Testimonials</a>
+        <a href="#contact" class="cta-button" id="mobileCtaBtn">Get Started</a>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1514,6 +1616,29 @@
                 if (!localStorage.getItem('theme')) {
                     applyTheme(e.matches ? 'dark' : 'light');
                 }
+            });
+        })();
+
+        // Mobile Menu Functionality
+        (function() {
+            var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            var mobileNav = document.getElementById('mobileNav');
+            var mobileCtaBtn = document.getElementById('mobileCtaBtn');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenuBtn.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            });
+
+            // Close menu when clicking a link
+            var mobileLinks = mobileNav.querySelectorAll('a');
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
             });
         })();
     </script>
