@@ -216,9 +216,16 @@
             stroke-linejoin: round;
         }
 
-        .mobile-menu-btn .menu-icon { display: block; }
+        .mobile-menu-btn .menu-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-menu-btn .menu-text { display: block; }
         .mobile-menu-btn .close-icon { display: none; }
-        .mobile-menu-btn.active .menu-icon { display: none; }
+        .mobile-menu-btn.active .menu-text { display: none; }
         .mobile-menu-btn.active .close-icon { display: block; }
 
         /* Mobile Navigation Overlay */
@@ -651,11 +658,7 @@
                 </button>
                 <a href="index.html#contact" class="cta-button">Get Started</a>
                 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                    <svg class="menu-icon" viewBox="0 0 24 24">
-                        <line x1="3" y1="6" x2="21" y2="6"/>
-                        <line x1="3" y1="12" x2="21" y2="12"/>
-                        <line x1="3" y1="18" x2="21" y2="18"/>
-                    </svg>
+                    <span class="menu-text">Menu</span>
                     <svg class="close-icon" viewBox="0 0 24 24">
                         <line x1="18" y1="6" x2="6" y2="18"/>
                         <line x1="6" y1="6" x2="18" y2="18"/>
