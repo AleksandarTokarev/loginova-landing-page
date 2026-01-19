@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Tutorials - Loginova AI</title>
+    <title>Privacy Policy - Loginova AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -356,7 +356,7 @@
         .hero-badge svg {
             width: 18px;
             height: 18px;
-            stroke: var(--red-500);
+            stroke: var(--blue-400);
             fill: none;
         }
 
@@ -377,131 +377,94 @@
             line-height: 1.7;
         }
 
-        /* Tutorials Section */
-        .tutorials {
+        /* Privacy Content Section */
+        .privacy-content {
             padding: 5rem 2rem;
             background: var(--bg-secondary);
             min-height: calc(100vh - 300px);
             transition: background-color 0.3s ease;
         }
 
-        .tutorials-container {
-            max-width: 1000px;
+        .privacy-container {
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .tutorials-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .tutorial-card {
+        .privacy-section {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tutorial-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, var(--red-500) 0%, var(--blue-500) 100%);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .tutorial-card:hover {
-            border-color: var(--border-hover);
-            transform: translateX(4px);
-            box-shadow: 0 10px 30px var(--card-shadow-hover);
-        }
-
-        .tutorial-card:hover::before {
-            transform: scaleY(1);
-        }
-
-        .tutorial-number {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--blue-500);
-            min-width: 50px;
-            text-align: center;
-        }
-
-        .tutorial-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--red-500) 0%, #dc2626 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .tutorial-icon svg {
-            width: 28px;
-            height: 28px;
-            fill: var(--white);
-        }
-
-        .tutorial-content {
-            flex: 1;
-        }
-
-        .tutorial-content h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-            letter-spacing: -0.01em;
-        }
-
-        .tutorial-content p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .tutorial-arrow {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: var(--bg-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
             transition: all 0.3s ease;
         }
 
-        .tutorial-card:hover .tutorial-arrow {
+        .privacy-section:hover {
+            border-color: var(--border-hover);
+            box-shadow: 0 4px 20px var(--card-shadow);
+        }
+
+        .privacy-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .privacy-section p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .privacy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .privacy-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .privacy-section ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .privacy-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 6px;
+            height: 6px;
             background: var(--blue-500);
+            border-radius: 50%;
         }
 
-        .tutorial-arrow svg {
-            width: 20px;
-            height: 20px;
-            stroke: var(--text-muted);
-            fill: none;
-            stroke-width: 2;
-            transition: stroke 0.3s ease;
+        .privacy-section a {
+            color: var(--blue-500);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .tutorial-card:hover .tutorial-arrow svg {
-            stroke: var(--white);
+        .privacy-section a:hover {
+            color: var(--blue-600);
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 2rem;
         }
 
         /* Footer */
@@ -591,31 +554,16 @@
                 font-size: 1.75rem;
             }
 
-            .tutorials {
+            .privacy-content {
                 padding: 3rem 1rem;
             }
 
-            .tutorial-card {
-                padding: 1.25rem;
-                gap: 1rem;
+            .privacy-section {
+                padding: 1.5rem;
             }
 
-            .tutorial-number {
-                font-size: 1.25rem;
-                min-width: 40px;
-            }
-
-            .tutorial-icon {
-                width: 48px;
-                height: 48px;
-            }
-
-            .tutorial-content h3 {
-                font-size: 1rem;
-            }
-
-            .tutorial-arrow {
-                display: none;
+            .privacy-section h2 {
+                font-size: 1.2rem;
             }
 
             .footer-links {
@@ -639,6 +587,7 @@
             <a href="index.html" class="logo-link"><img src="assets/logo.svg" alt="Loginova" class="logo"></a>
             <div class="header-actions">
                 <a href="index.html" class="nav-link">Home</a>
+                <a href="tutorials.html" class="nav-link">Tutorials</a>
                 <a href="testimonials.html" class="nav-link">Testimonials</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <svg class="moon-icon" viewBox="0 0 24 24">
@@ -681,169 +630,135 @@
         <div class="hero-container">
             <div class="hero-badge">
                 <svg viewBox="0 0 24 24" stroke-width="2">
-                    <polygon points="5 3 19 12 5 21 5 3"/>
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
-                Video Tutorials
+                Legal
             </div>
-            <h1>Learn How to Use Loginova TMS</h1>
-            <p>Step-by-step video guides to help you master every feature of our Transportation Management System.</p>
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. This policy explains how Loginova AI collects, uses, and protects your information.</p>
         </div>
     </section>
 
-    <!-- Tutorials Section -->
-    <section class="tutorials">
-        <div class="tutorials-container">
-            <div class="tutorials-grid">
-                <!-- Tutorial 1 -->
-                <a href="https://youtu.be/S0ke1WzseZQ" target="_blank" rel="noopener noreferrer" class="tutorial-card">
-                    <span class="tutorial-number">01</span>
-                    <div class="tutorial-icon">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3>Introduction to Loginova AI Transportation Management System</h3>
-                        <p>Get started with an overview of the platform</p>
-                    </div>
-                    <div class="tutorial-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </a>
-
-                <!-- Tutorial 2 -->
-                <a href="https://youtu.be/yZ-fZhfh51o" target="_blank" rel="noopener noreferrer" class="tutorial-card">
-                    <span class="tutorial-number">02</span>
-                    <div class="tutorial-icon">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3>Companies, Contractors and Vendors in Loginova.ai TMS</h3>
-                        <p>Learn how to manage business relationships</p>
-                    </div>
-                    <div class="tutorial-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </a>
-
-                <!-- Tutorial 3 -->
-                <a href="https://youtu.be/nVgn935DT-Y" target="_blank" rel="noopener noreferrer" class="tutorial-card">
-                    <span class="tutorial-number">03</span>
-                    <div class="tutorial-icon">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3>Managing Transportation Assets: A Comprehensive Guide</h3>
-                        <p>Master asset management in the system</p>
-                    </div>
-                    <div class="tutorial-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </a>
-
-                <!-- Tutorial 4 -->
-                <a href="https://youtu.be/nVgn935DT-Y" target="_blank" rel="noopener noreferrer" class="tutorial-card">
-                    <span class="tutorial-number">04</span>
-                    <div class="tutorial-icon">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3>Managing Company Assets: Assigning Trucks, Equipment, and Drivers</h3>
-                        <p>Learn truck assignments, equipment, and driver billing</p>
-                    </div>
-                    <div class="tutorial-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </a>
-
-                <!-- Tutorial 5 -->
-                <a href="https://youtu.be/_-kbXfnJGK0" target="_blank" rel="noopener noreferrer" class="tutorial-card">
-                    <span class="tutorial-number">05</span>
-                    <div class="tutorial-icon">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3>Dispatch Menu Navigation</h3>
-                        <p>Navigate the dispatch interface efficiently</p>
-                    </div>
-                    <div class="tutorial-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </a>
-
-                <!-- Tutorial 6 -->
-                <a href="https://youtu.be/QLc1vHIa6Xk" target="_blank" rel="noopener noreferrer" class="tutorial-card">
-                    <span class="tutorial-number">06</span>
-                    <div class="tutorial-icon">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3>Manual Load Creation</h3>
-                        <p>Create loads manually step by step</p>
-                    </div>
-                    <div class="tutorial-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </a>
-
-                <!-- Tutorial 7 -->
-                <a href="https://youtu.be/GcwUDtIAmSA" target="_blank" rel="noopener noreferrer" class="tutorial-card">
-                    <span class="tutorial-number">07</span>
-                    <div class="tutorial-icon">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3>AI Powered Load Creation</h3>
-                        <p>Use AI to automatically create loads from documents</p>
-                    </div>
-                    <div class="tutorial-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </a>
-
-                <!-- Tutorial 8 -->
-                <a href="https://youtu.be/Den3sApnkIE" target="_blank" rel="noopener noreferrer" class="tutorial-card">
-                    <span class="tutorial-number">08</span>
-                    <div class="tutorial-icon">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3>Load Dispatching</h3>
-                        <p>Dispatch loads to drivers and trucks</p>
-                    </div>
-                    <div class="tutorial-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </a>
-
-                <!-- Tutorial 9 -->
-                <a href="https://youtu.be/-HRffCuMKGs" target="_blank" rel="noopener noreferrer" class="tutorial-card">
-                    <span class="tutorial-number">09</span>
-                    <div class="tutorial-icon">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3>Load Billing</h3>
-                        <p>Handle invoicing and billing for loads</p>
-                    </div>
-                    <div class="tutorial-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </a>
-
-                <!-- Tutorial 10 -->
-                <a href="https://youtu.be/Gk66ACzXUcQ" target="_blank" rel="noopener noreferrer" class="tutorial-card">
-                    <span class="tutorial-number">10</span>
-                    <div class="tutorial-icon">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3>Statements</h3>
-                        <p>Generate and manage driver and company statements</p>
-                    </div>
-                    <div class="tutorial-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </a>
+    <!-- Privacy Content Section -->
+    <section class="privacy-content">
+        <div class="privacy-container">
+            <div class="privacy-section">
+                <h2>1. Introduction</h2>
+                <p>Loginova AI ("we," "our," or "us") operates the Loginova Transportation Management System (TMS). This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you use our software platform and services.</p>
+                <p>By accessing or using Loginova TMS, you agree to the terms of this Privacy Policy. If you do not agree with the terms, please do not access or use our services.</p>
             </div>
+
+            <div class="privacy-section">
+                <h2>2. Information We Collect</h2>
+                <p>We collect information that you provide directly to us, as well as information collected automatically when you use our services:</p>
+                <ul>
+                    <li><strong>Account Information:</strong> Name, email address, phone number, company name, and billing information when you create an account or subscribe to our services.</li>
+                    <li><strong>Transportation Data:</strong> Load details, shipment information, driver data, vehicle information, routes, and delivery records that you enter into the TMS.</li>
+                    <li><strong>Business Information:</strong> Company details, contractor information, vendor data, and other business-related records necessary for transportation management.</li>
+                    <li><strong>Usage Data:</strong> Information about how you interact with our platform, including features used, pages visited, and actions taken within the system.</li>
+                    <li><strong>Device Information:</strong> IP address, browser type, operating system, and device identifiers when you access our services.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>3. How We Use Your Information</h2>
+                <p>We use the information we collect to:</p>
+                <ul>
+                    <li>Provide, maintain, and improve our Transportation Management System</li>
+                    <li>Process transactions and send related information, including confirmations and invoices</li>
+                    <li>Send technical notices, updates, security alerts, and support messages</li>
+                    <li>Respond to your comments, questions, and customer service requests</li>
+                    <li>Monitor and analyze trends, usage, and activities to improve user experience</li>
+                    <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities</li>
+                    <li>Personalize and improve your experience with our services</li>
+                    <li>Comply with legal obligations and enforce our terms of service</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>4. Information Sharing and Disclosure</h2>
+                <p>We may share your information in the following circumstances:</p>
+                <ul>
+                    <li><strong>With Your Consent:</strong> We may share information when you give us explicit permission to do so.</li>
+                    <li><strong>Service Providers:</strong> We may share data with third-party vendors who perform services on our behalf, such as payment processing, data analysis, and customer support.</li>
+                    <li><strong>Business Transfers:</strong> In connection with any merger, acquisition, or sale of company assets, your information may be transferred as a business asset.</li>
+                    <li><strong>Legal Requirements:</strong> We may disclose information if required by law, regulation, legal process, or governmental request.</li>
+                    <li><strong>Protection of Rights:</strong> We may share information to protect the rights, property, and safety of Loginova AI, our users, or others.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>5. Data Security</h2>
+                <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+                <ul>
+                    <li>Encryption of data in transit and at rest</li>
+                    <li>Regular security assessments and penetration testing</li>
+                    <li>Access controls and authentication mechanisms</li>
+                    <li>Employee training on data protection practices</li>
+                    <li>Secure data centers with physical security measures</li>
+                </ul>
+                <p>While we strive to protect your information, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>6. Data Retention</h2>
+                <p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. When determining retention periods, we consider:</p>
+                <ul>
+                    <li>The nature and sensitivity of the information</li>
+                    <li>The purposes for which we process the information</li>
+                    <li>Applicable legal, regulatory, tax, accounting, or other requirements</li>
+                    <li>Whether the purpose of processing can be achieved through other means</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>7. Your Rights and Choices</h2>
+                <p>Depending on your location, you may have certain rights regarding your personal information:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request access to your personal information that we hold.</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information.</li>
+                    <li><strong>Deletion:</strong> Request deletion of your personal information, subject to certain exceptions.</li>
+                    <li><strong>Data Portability:</strong> Request a copy of your data in a structured, machine-readable format.</li>
+                    <li><strong>Opt-Out:</strong> Opt out of marketing communications at any time.</li>
+                    <li><strong>Withdraw Consent:</strong> Withdraw consent where processing is based on consent.</li>
+                </ul>
+                <p>To exercise these rights, please contact us using the information provided below.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>8. Cookies and Tracking Technologies</h2>
+                <p>We use cookies and similar tracking technologies to collect and track information about your use of our services. Cookies are small data files stored on your device that help us improve our services and your experience.</p>
+                <p>You can control cookies through your browser settings. However, disabling cookies may limit your ability to use certain features of our platform.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>9. Third-Party Services</h2>
+                <p>Our services may contain links to third-party websites or integrate with third-party services. We are not responsible for the privacy practices of these third parties. We encourage you to review the privacy policies of any third-party services you access through our platform.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>10. Children's Privacy</h2>
+                <p>Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected personal information from a child without parental consent, we will take steps to delete that information.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>11. International Data Transfers</h2>
+                <p>Your information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that are different from the laws of your country. We take appropriate safeguards to ensure that your personal information remains protected in accordance with this Privacy Policy.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>12. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. We encourage you to review this Privacy Policy periodically for any changes.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>13. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us at:</p>
+                <p><strong>Loginova AI</strong><br>
+                Email: <a href="mailto:privacy@loginova.ai">privacy@loginova.ai</a></p>
+            </div>
+
+            <p class="last-updated">Last Updated: January 2025</p>
         </div>
     </section>
 
